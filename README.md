@@ -1,24 +1,40 @@
-# README
+# String Calculator API — Ruby on Rails (TDD Kata)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a String Calculator API built using Ruby on Rails and Test-Driven Development (TDD). It parses a given string of numbers with various delimiters and returns their sum.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```bash
+git clone https://github.com/GopalPatoliya/string-calculator-api.git
+cd string-calculator-api
+bundle install
+rails db:create db:migrate
+rails server
 
-* System dependencies
+## API Endpoint
 
-* Configuration
+POST /calculate
 
-* Database creation
+## Body
+{
+  "input": "//[**][%%]\n1**2%%3"
+}
 
-* Database initialization
+## Response
+{
+  "result": 6
+}
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## RUN tests
+bundle exec rspec
 
-* ...
+## Example cURL Request
+
+```bash
+curl -X POST http://localhost:3000/calculate \
+  -H "Content-Type: application/json" \
+  -d '{"input": "//[***]\n1***2***3"}'
+
+

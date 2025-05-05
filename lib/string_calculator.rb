@@ -21,5 +21,7 @@ class StringCalculator
     raise "negative numbers not allowed #{negatives.join(',')}" if negatives.any?
 
     nums.reject { |n| n > 1000 }.sum
+
+    # nums = numbers.scan(/\d+/).map(&:to_i)
   end
 end
